@@ -34,7 +34,9 @@ apk add --no-cache --update ca-certificates && \
 chmod +x /usr/local/bin/kubectl && \
 chmod +x /usr/local/bin/sops && \
 mkdir /root/.kube && \
-mkdir /root/.aws
+mkdir /root/.aws && \
+touch /root/.aws/credentials && \
+touch /root/.aws/config
 
 WORKDIR /usr/local/bin
 CMD ["/usr/local/bin/kubectl"]
