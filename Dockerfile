@@ -32,7 +32,8 @@ COPY --from=1 /go/bin/sops /usr/local/bin/sops
 RUN \
 chmod +x /usr/local/bin/kubectl && \
 chmod +x /usr/local/bin/sops && \
-mkdir /root/.kube
+mkdir /root/.kube && \
+mkdir /root/.aws
 
 WORKDIR /usr/local/bin
 CMD ["/usr/local/bin/kubectl"]
