@@ -30,6 +30,7 @@ WORKDIR /root
 COPY --from=0 /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=1 /go/bin/sops /usr/local/bin/sops
 RUN \
+apk add --no-cache --update ca-certificates && \
 chmod +x /usr/local/bin/kubectl && \
 chmod +x /usr/local/bin/sops && \
 mkdir /root/.kube && \
